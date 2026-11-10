@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "cd \"$CLAUDE_PROJECT_DIR\" && if [ -n \"$(git status --porcelain)\" ]; then git add -A && git -c user.name='Team Hub' -c user.email='panshuldevikar544@gmail.com' commit -q -m 'Auto-update' && git push -q; fi >/dev/null 2>&1 || true",
+            "timeout": 120,
+            "statusMessage": "Saving to GitHub..."
+          }
+        ]
+      }
+    ]
+  }
+}
